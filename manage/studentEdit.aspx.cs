@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace manage
 {
-    public partial class studentEdit : System.Web.UI.Page
+    public partial class About : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -22,19 +22,27 @@
 											<div class="col-3.5">
 												<div class="input-group mb-3">
 													<div class="input-group-prepend">
-													  <span class="input-group-text" >班號</span>
+													  <br /><span class="input-group-text" >班號</span>
 													</div>
-													<input type="text" class="form-control" placeholder="請輸入班號"  aria-describedby="basic-addon1">
+													<input type="text" class="form-control" placeholder="請輸入班號"  >
 												  </div>
 											</div>
 											<div class="col-3.5">
 												<div class="input-group mb-3">
 													<div class="input-group-prepend">
-													  <span class="input-group-text" id="basic-addon1">導師</span>
+													  <br /><span class="input-group-text" >導師</span>
 													</div>
-													<input type="text" class="form-control" placeholder="請輸入導師姓名" aria-label="degree" aria-describedby="basic-addon1">
+													<input type="text" class="form-control" placeholder="請輸入導師姓名" aria-label="degree" >
 												  </div>
-											</div>										
+											</div>
+                                            <div class="col-3.5">
+												<div class="input-group mb-3">
+													<div class="input-group-prepend">
+													  <br /><span class="input-group-text" >學級年度</span>
+													</div>
+													<input type="text" class="form-control" placeholder="請輸入學級年度" aria-label="degree" >
+												  </div>
+											</div>		
 											
 										</div>
 										<div class="row">

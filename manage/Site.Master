@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - 我的 ASP.NET  應用程式</title>
+    <title><%: Page.Title %> - LetNoBook Manage</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -39,7 +39,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-default navbar-fixed-top"  >
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -47,13 +47,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">應用程式名稱</a>
+                    <a class="navbar-brand" runat="server"><img src="images/logoBook.png" width="36" height="36" align="left" />LetNoBook Manage</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">班級管理</a></li>
-                        <li><a runat="server" href="~/Contact">教師管理</a></li>
-                        <li><a runat="server" href="~/About">學生管理</a></li>
+                        <li><a runat="server" href="~/teacherEdit">教師管理</a></li>
+                        <li><a runat="server" href="~/studentEdit">學生管理</a></li>
                     </ul>
                 </div>
             </div>
@@ -63,7 +63,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - 我的 ASP.NET  應用程式</p>
+                <p>&copy; <%: DateTime.Now.Year %> - LetNoBook Manage</p>
             </footer>
         </div>
 
