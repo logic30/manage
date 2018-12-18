@@ -105,6 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\log1.png" />
     <Content Include="images\logoBook.png" />
     <Content Include="studentEdit.aspx" />
     <Content Include="teacherEdit.aspx" />
