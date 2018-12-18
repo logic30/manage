@@ -113,9 +113,9 @@ input,
 optgroup,
 select,
 textarea {
-  margin: 0;
-  font: inherit;
   color: inherit;
+    margin-left: 0;
+    margin-top: 0;
 }
 button {
   overflow: visible;
@@ -3003,7 +3003,6 @@ select[multiple].input-lg {
 .btn {
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 0;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
@@ -3117,6 +3116,7 @@ fieldset[disabled] .btn-default.focus {
   color: #fff;
   background-color: #337ab7;
   border-color: #2e6da4;
+    height: 35px;
 }
 .btn-primary:focus,
 .btn-primary.focus {

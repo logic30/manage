@@ -16,7 +16,7 @@
 													<div class="input-group-prepend">
 													  <span class="input-group-text" >年級</span>
 													</div>
-													<input type="text" class="form-control" placeholder="請輸入年級"  >
+													<asp:Textbox runat="server" type="text" class="form-control" placeholder="請輸入年級" id="txtGrade"  ></asp:TextBox>
 												  </div>
 											</div>
 											<div class="col-3.5">
@@ -24,7 +24,7 @@
 													<div class="input-group-prepend">
 													  <br /><span class="input-group-text" >班號</span>
 													</div>
-													<input type="text" class="form-control" placeholder="請輸入班號"  >
+													<asp:Textbox runat="server" type="text" class="form-control" placeholder="請輸入班號" id="txtClass" ></asp:TextBox>
 												  </div>
 											</div>
 											<div class="col-3.5">
@@ -32,7 +32,7 @@
 													<div class="input-group-prepend">
 													  <br /><span class="input-group-text" >導師</span>
 													</div>
-													<input type="text" class="form-control" placeholder="請輸入導師姓名" aria-label="degree" >
+													<asp:Textbox runat="server" type="text" class="form-control" placeholder="請輸入導師姓名" aria-label="degree" id="txtName" ></asp:TextBox>
 												  </div>
 											</div>
                                             <div class="col-3.5">
@@ -40,22 +40,23 @@
 													<div class="input-group-prepend">
 													  <br /><span class="input-group-text" >學級年度</span>
 													</div>
-													<input type="text" class="form-control" placeholder="請輸入學級年度" aria-label="degree" >
+													<asp:Textbox runat="server" type="text" class="form-control" placeholder="請輸入學級年度" aria-label="degree" id="txtYear" ></asp:TextBox>
 												  </div>
 											</div>		
 											
 										</div>
 										<div class="row">
                                             <br />
-												<button type="button" class="btn btn-primary">新增</button>
-											    <button type="button" class="btn btn-primary">修改</button>
-												<button type="button" class="btn btn-primary">刪除</button>
+												<asp:button type="button" class="btn btn-primary" id="btnAdd" runat="server" Text="新增" OnClick="btnAdd_Click" />
+											    <asp:button type="button" class="btn btn-primary" id="btnFix" runat="server" Text="修改" />
+												<asp:button type="button" class="btn btn-primary" id="btnDel" runat="server" Text="刪除" />
+                                                <asp:Label ID="lblMsg" runat="server" Text="Label"></asp:Label>
 										</div>
 									</div>
 								</div>
 								<div class="alert alert-info" role="alert">
 									<div class="container">
-										<div class="row">
+										<div class="row" id="btnSearch1">
 											<div class="col-2">
 												<span class="input-group-text">進階搜尋</span>
 													</div>
@@ -73,7 +74,8 @@
 													  
 													
 											<div class="col">
-												<button type="button" class="btn btn-primary">搜尋</button>
+												<asp:Button type="submit" runat="server" class="btn btn-primary" aria-pressed="undefined" aria-readonly="False" aria-required="False" id="btnSearch" Text="搜尋" />
+                                                
                                                 <br />
 											</div>	
 										       </div>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dbDemo">
+  <DataContextMoniker Name="/dbDemoDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ee0b58e0-9d8c-48f2-be31-aa71d1c2a160" absoluteBounds="0.5, 0.625, 2, 1.7220992024739581">
+      <DataClassMoniker Name="/dbDemoDataContext/tClass" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ec91408d-82f6-4754-a406-a6c91d7d5f5e" absoluteBounds="0.51500000000000012, 1.085, 1.9700000000000002, 1.1620992024739583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8d6385fd-9b6a-4447-bef6-42eff6150217" absoluteBounds="0.5, 2.875, 2, 1.7220992024739581">
+      <DataClassMoniker Name="/dbDemoDataContext/tParents" />
+      <nestedChildShapes>
+        <elementListCompartment Id="248bb14a-c273-45dc-9c77-c2872648d68c" absoluteBounds="0.515, 3.335, 1.9700000000000002, 1.1620992024739583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4e0c4996-677f-48d8-b996-116cc3528188" absoluteBounds="3.375, 0.625, 2, 2.2764815266927085">
+      <DataClassMoniker Name="/dbDemoDataContext/tStudent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b102b34-389c-4e74-9021-12fbb16c5aeb" absoluteBounds="3.39, 1.085, 1.9700000000000002, 1.7164815266927085" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ab2008e3-2d5d-42c5-9f6d-a30f2a0270bd" absoluteBounds="3.5, 3.125, 2, 1.9068933105468751">
+      <DataClassMoniker Name="/dbDemoDataContext/tTeacher" />
+      <nestedChildShapes>
+        <elementListCompartment Id="69bcf0ff-ed0a-4e64-bb49-b9871c99d52e" absoluteBounds="3.5149999999999997, 3.585, 1.9700000000000002, 1.346893310546875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
