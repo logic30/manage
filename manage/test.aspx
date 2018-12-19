@@ -10,6 +10,9 @@
         .auto-style1 {
             width: 100%;
         }
+        .auto-style2 {
+            height: 36px;
+        }
     </style>
 </head>
 <body>
@@ -29,16 +32,13 @@
             </tr>
             <tr>
                 <td>
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="f學生編號" DataSourceID="SqlDataSource1">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="fClassId" DataSourceID="SqlDataSource1">
                         <Columns>
-                            <asp:BoundField DataField="f學生編號" HeaderText="f學生編號" InsertVisible="False" ReadOnly="True" SortExpression="f學生編號" />
-                            <asp:BoundField DataField="f姓名" HeaderText="f姓名" SortExpression="f姓名" />
-                            <asp:BoundField DataField="f生日" HeaderText="f生日" SortExpression="f生日" />
-                            <asp:BoundField DataField="f密碼" HeaderText="f密碼" SortExpression="f密碼" />
-                            <asp:CheckBoxField DataField="f性別" HeaderText="f性別" SortExpression="f性別" />
-                            <asp:BoundField DataField="fClassId" HeaderText="fClassId" SortExpression="fClassId" />
-                            <asp:BoundField DataField="f身份區分" HeaderText="f身份區分" SortExpression="f身份區分" />
-                            <asp:BoundField DataField="f家庭編號" HeaderText="f家庭編號" SortExpression="f家庭編號" />
+                            <asp:BoundField DataField="fClassId" HeaderText="fClassId" InsertVisible="False" ReadOnly="True" SortExpression="fClassId" />
+                            <asp:BoundField DataField="f年級" HeaderText="f年級" SortExpression="f年級" />
+                            <asp:BoundField DataField="f班號" HeaderText="f班號" SortExpression="f班號" />
+                            <asp:BoundField DataField="f學級年度" HeaderText="f學級年度" SortExpression="f學級年度" />
+                            <asp:BoundField DataField="f導師姓名" HeaderText="f導師姓名" SortExpression="f導師姓名" />
                         </Columns>
                         <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
                         <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
@@ -50,16 +50,63 @@
                         <SortedDescendingCellStyle BackColor="#F1E5CE" />
                         <SortedDescendingHeaderStyle BackColor="#93451F" />
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:letnobookDBConnectionString %>" SelectCommand="SELECT * FROM [tStudent]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:letnobookDBConnectionString %>" SelectCommand="SELECT * FROM [tClass]" ConflictDetection="CompareAllValues" DeleteCommand="DELETE FROM [tClass] WHERE [fClassId] = @original_fClassId AND (([f年級] = @original_f年級) OR ([f年級] IS NULL AND @original_f年級 IS NULL)) AND (([f班號] = @original_f班號) OR ([f班號] IS NULL AND @original_f班號 IS NULL)) AND (([f學級年度] = @original_f學級年度) OR ([f學級年度] IS NULL AND @original_f學級年度 IS NULL)) AND (([f導師姓名] = @original_f導師姓名) OR ([f導師姓名] IS NULL AND @original_f導師姓名 IS NULL))" InsertCommand="INSERT INTO [tClass] ([f年級], [f班號], [f學級年度], [f導師姓名]) VALUES (@f年級, @f班號, @f學級年度, @f導師姓名)" OldValuesParameterFormatString="original_{0}" UpdateCommand="UPDATE [tClass] SET [f年級] = @f年級, [f班號] = @f班號, [f學級年度] = @f學級年度, [f導師姓名] = @f導師姓名 WHERE [fClassId] = @original_fClassId AND (([f年級] = @original_f年級) OR ([f年級] IS NULL AND @original_f年級 IS NULL)) AND (([f班號] = @original_f班號) OR ([f班號] IS NULL AND @original_f班號 IS NULL)) AND (([f學級年度] = @original_f學級年度) OR ([f學級年度] IS NULL AND @original_f學級年度 IS NULL)) AND (([f導師姓名] = @original_f導師姓名) OR ([f導師姓名] IS NULL AND @original_f導師姓名 IS NULL))">
+                        <DeleteParameters>
+                            <asp:Parameter Name="original_fClassId" Type="Int32" />
+                            <asp:Parameter Name="original_f年級" Type="String" />
+                            <asp:Parameter Name="original_f班號" Type="String" />
+                            <asp:Parameter Name="original_f學級年度" Type="String" />
+                            <asp:Parameter Name="original_f導師姓名" Type="String" />
+                        </DeleteParameters>
+                        <InsertParameters>
+                            <asp:Parameter Name="f年級" Type="String" />
+                            <asp:Parameter Name="f班號" Type="String" />
+                            <asp:Parameter Name="f學級年度" Type="String" />
+                            <asp:Parameter Name="f導師姓名" Type="String" />
+                        </InsertParameters>
+                        <UpdateParameters>
+                            <asp:Parameter Name="f年級" Type="String" />
+                            <asp:Parameter Name="f班號" Type="String" />
+                            <asp:Parameter Name="f學級年度" Type="String" />
+                            <asp:Parameter Name="f導師姓名" Type="String" />
+                            <asp:Parameter Name="original_fClassId" Type="Int32" />
+                            <asp:Parameter Name="original_f年級" Type="String" />
+                            <asp:Parameter Name="original_f班號" Type="String" />
+                            <asp:Parameter Name="original_f學級年度" Type="String" />
+                            <asp:Parameter Name="original_f導師姓名" Type="String" />
+                        </UpdateParameters>
+                    </asp:SqlDataSource>
                 </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style2"></td>
+                <td class="auto-style2"></td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="fClassId" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+                        <AlternatingRowStyle BackColor="White" />
+                        <Columns>
+                            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                            <asp:BoundField DataField="fClassId" HeaderText="班級編號" InsertVisible="False" ReadOnly="True" SortExpression="fClassId" />
+                            <asp:BoundField DataField="f年級" HeaderText="年級" SortExpression="f年級" />
+                            <asp:BoundField DataField="f班號" HeaderText="班號" SortExpression="f班號" />
+                            <asp:BoundField DataField="f學級年度" HeaderText="學級年度" SortExpression="f學級年度" />
+                            <asp:BoundField DataField="f導師姓名" HeaderText="導師姓名" SortExpression="f導師姓名" />
+                        </Columns>
+                        <EditRowStyle BackColor="#2461BF" />
+                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#EFF3FB" />
+                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                        <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                    </asp:GridView>
+                </td>
                 <td>&nbsp;</td>
             </tr>
         </table>

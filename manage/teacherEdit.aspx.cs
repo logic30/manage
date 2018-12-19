@@ -11,7 +11,7 @@ namespace manage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblMsg.Visible = false;
         }
     }
 }
