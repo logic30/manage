@@ -14,7 +14,7 @@
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">新增</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">查尋</a>
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">查詢</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
@@ -22,7 +22,7 @@
       <h2>管理者介面（教師）</h2>
       
       <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="f老師編號" DataSourceID="SqlDataSource1" class="table table-striped" CellPadding="4" ForeColor="#333333" GridLines="None">
-          <AlternatingRowStyle BackColor="White" />
+          <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
           <Columns>
               <asp:TemplateField HeaderText="老師編號" InsertVisible="False" SortExpression="f老師編號">
                   <EditItemTemplate>
@@ -31,7 +31,7 @@
                   <ItemTemplate>
                       <asp:Label ID="Label5" runat="server" Text='<%# Bind("f老師編號") %>'></asp:Label>
                   </ItemTemplate>
-                  <ControlStyle Font-Size="Larger" />
+                  <ControlStyle Font-Size="Large" />
               </asp:TemplateField>
               <asp:TemplateField HeaderText="姓名" SortExpression="f姓名">
                   <EditItemTemplate>
@@ -40,14 +40,14 @@
                   <ItemTemplate>
                       <asp:Label ID="Label4" runat="server" Text='<%# Bind("f姓名") %>'></asp:Label>
                   </ItemTemplate>
-                  <ControlStyle Font-Size="Larger" />
+                  <ControlStyle Font-Size="Large" />
               </asp:TemplateField>
               <asp:TemplateField HeaderText="生日" SortExpression="f生日">
                   <EditItemTemplate>
                       <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("f生日") %>'></asp:TextBox>
                   </EditItemTemplate>
                   <ItemTemplate>
-                      <asp:Label ID="Label3" runat="server" Text='<%# Bind("f生日") %>'></asp:Label>
+                      <asp:Label ID="Label3" runat="server" Text='<%# Bind("f生日", "{0:D}") %>'></asp:Label>
                   </ItemTemplate>
                   <ControlStyle Font-Size="Larger" />
               </asp:TemplateField>
@@ -78,7 +78,7 @@
                   </ItemTemplate>
                   <ControlStyle Font-Size="Larger" />
               </asp:TemplateField>
-              <asp:TemplateField ShowHeader="False">
+              <asp:TemplateField ShowHeader="False" HeaderText="功能">
                   <EditItemTemplate>
                       <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="更新"></asp:LinkButton>
                       &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="取消"></asp:LinkButton>
@@ -92,16 +92,16 @@
                   <ControlStyle Font-Size="Larger" />
               </asp:TemplateField>
           </Columns>
-          <EditRowStyle BackColor="#2461BF" />
-          <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-          <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-          <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-          <RowStyle BackColor="#EFF3FB" />
-          <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-          <SortedAscendingCellStyle BackColor="#F5F7FB" />
-          <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-          <SortedDescendingCellStyle BackColor="#E9EBEF" />
-          <SortedDescendingHeaderStyle BackColor="#4870BE" />
+          <EditRowStyle BackColor="#999999" />
+          <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+          <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+          <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+          <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+          <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+          <SortedAscendingCellStyle BackColor="#E9E7E2" />
+          <SortedAscendingHeaderStyle BackColor="#506C8C" />
+          <SortedDescendingCellStyle BackColor="#FFFDF8" />
+          <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
       </asp:GridView>
       <br />
       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:letnobookDBConnectionString %>" DeleteCommand="DELETE FROM [tTeacher] WHERE [f老師編號] = @original_f老師編號 AND (([f姓名] = @original_f姓名) OR ([f姓名] IS NULL AND @original_f姓名 IS NULL)) AND (([f生日] = @original_f生日) OR ([f生日] IS NULL AND @original_f生日 IS NULL)) AND (([f密碼] = @original_f密碼) OR ([f密碼] IS NULL AND @original_f密碼 IS NULL)) AND (([f性別] = @original_f性別) OR ([f性別] IS NULL AND @original_f性別 IS NULL)) AND (([f身份區分] = @original_f身份區分) OR ([f身份區分] IS NULL AND @original_f身份區分 IS NULL))" InsertCommand="INSERT INTO [tTeacher] ([f姓名], [f生日], [f密碼], [f性別], [f身份區分]) VALUES (@f姓名, @f生日, @f密碼, @f性別, @f身份區分)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [tTeacher]" UpdateCommand="UPDATE [tTeacher] SET [f姓名] = @f姓名, [f生日] = @f生日, [f密碼] = @f密碼, [f性別] = @f性別, [f身份區分] = @f身份區分 WHERE [f老師編號] = @original_f老師編號 AND (([f姓名] = @original_f姓名) OR ([f姓名] IS NULL AND @original_f姓名 IS NULL)) AND (([f生日] = @original_f生日) OR ([f生日] IS NULL AND @original_f生日 IS NULL)) AND (([f密碼] = @original_f密碼) OR ([f密碼] IS NULL AND @original_f密碼 IS NULL)) AND (([f性別] = @original_f性別) OR ([f性別] IS NULL AND @original_f性別 IS NULL)) AND (([f身份區分] = @original_f身份區分) OR ([f身份區分] IS NULL AND @original_f身份區分 IS NULL))">

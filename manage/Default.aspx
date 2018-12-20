@@ -13,7 +13,7 @@
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">新增</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">查尋</a>
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">查詢</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
@@ -21,7 +21,7 @@
       <h2>管理者介面（班級）</h2>
        
       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="fClassId" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" class="table table-striped" AllowPaging="True">
-          <AlternatingRowStyle BackColor="White" />
+          <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
           <Columns>
               <asp:TemplateField HeaderText="班級編號" InsertVisible="False" SortExpression="fClassId">
                   <EditItemTemplate>
@@ -30,7 +30,7 @@
                   <ItemTemplate>
                       <asp:Label ID="Label2" runat="server" Text='<%# Bind("fClassId") %>'></asp:Label>
                   </ItemTemplate>
-                  <ControlStyle Font-Size="Larger" />
+                  <ControlStyle Font-Size="Large" />
               </asp:TemplateField>
               <asp:TemplateField HeaderText="年級" SortExpression="f年級">
                   <EditItemTemplate>
@@ -68,7 +68,7 @@
                   </ItemTemplate>
                   <ControlStyle Font-Size="Larger" />
               </asp:TemplateField>
-              <asp:TemplateField ShowHeader="False">
+              <asp:TemplateField ShowHeader="False" HeaderText="功能">
                   <EditItemTemplate>
                       <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="更新"></asp:LinkButton>
                       &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="取消"></asp:LinkButton>
@@ -82,16 +82,16 @@
                   <ControlStyle Font-Size="Larger" />
               </asp:TemplateField>
           </Columns>
-          <EditRowStyle BackColor="#2461BF" />
-          <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-          <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-          <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-          <RowStyle BackColor="#EFF3FB" />
-          <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-          <SortedAscendingCellStyle BackColor="#F5F7FB" />
-          <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-          <SortedDescendingCellStyle BackColor="#E9EBEF" />
-          <SortedDescendingHeaderStyle BackColor="#4870BE" />
+          <EditRowStyle BackColor="#999999" />
+          <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+          <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+          <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+          <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+          <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+          <SortedAscendingCellStyle BackColor="#E9E7E2" />
+          <SortedAscendingHeaderStyle BackColor="#506C8C" />
+          <SortedDescendingCellStyle BackColor="#FFFDF8" />
+          <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
       </asp:GridView>
            
       <br />

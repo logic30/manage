@@ -14,40 +14,40 @@
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">新增</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">查尋</a>
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">查詢</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade active in" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <h2>&&nbsp;管理者介面（學生）</h2>
+      <h2>管理者介面（學生）</h2>
       <p>
-          <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="f學生編號" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" class="table table-striped">
-              <AlternatingRowStyle BackColor="White" />
+          <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="f學生編號" DataSourceID="SqlDataSource1" AllowPaging="True" class="table table-striped" CellPadding="4" ForeColor="#333333" GridLines="None">
+              <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
               <Columns>
                   <asp:TemplateField HeaderText="學生編號" InsertVisible="False" SortExpression="f學生編號">
                       <EditItemTemplate>
                           <asp:Label ID="Label1" runat="server" Text='<%# Eval("f學生編號") %>'></asp:Label>
                       </EditItemTemplate>
                       <ItemTemplate>
-                          <asp:Label ID="Label6" runat="server" Text='<%# Bind("f學生編號") %>'></asp:Label>
+                          <asp:Label ID="Label1" runat="server" Text='<%# Bind("f學生編號") %>'></asp:Label>
                       </ItemTemplate>
-                      <ControlStyle Font-Size="Larger" />
+                      <ControlStyle Font-Size="Large" />
                   </asp:TemplateField>
                   <asp:TemplateField HeaderText="姓名" SortExpression="f姓名">
                       <EditItemTemplate>
-                          <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("f姓名") %>'></asp:TextBox>
+                          <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("f姓名") %>'></asp:TextBox>
                       </EditItemTemplate>
                       <ItemTemplate>
-                          <asp:Label ID="Label5" runat="server" Text='<%# Bind("f姓名") %>'></asp:Label>
+                          <asp:Label ID="Label2" runat="server" Text='<%# Bind("f姓名") %>'></asp:Label>
                       </ItemTemplate>
-                      <ControlStyle Font-Size="Larger" />
+                      <ControlStyle Font-Size="Large" />
                   </asp:TemplateField>
                   <asp:TemplateField HeaderText="生日" SortExpression="f生日">
                       <EditItemTemplate>
-                          <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("f生日") %>'></asp:TextBox>
+                          <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("f生日") %>'></asp:TextBox>
                       </EditItemTemplate>
                       <ItemTemplate>
-                          <asp:Label ID="Label4" runat="server" Text='<%# Bind("f生日") %>'></asp:Label>
+                          <asp:Label ID="Label3" runat="server" Text='<%# Bind("f生日", "{0:D}") %>'></asp:Label>
                       </ItemTemplate>
                       <ControlStyle Font-Size="Larger" />
                   </asp:TemplateField>
@@ -56,7 +56,7 @@
                           <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("f密碼") %>'></asp:TextBox>
                       </EditItemTemplate>
                       <ItemTemplate>
-                          <asp:Label ID="Label3" runat="server" Text='<%# Bind("f密碼") %>'></asp:Label>
+                          <asp:Label ID="Label4" runat="server" Text='<%# Bind("f密碼") %>'></asp:Label>
                       </ItemTemplate>
                       <ControlStyle Font-Size="Larger" />
                   </asp:TemplateField>
@@ -71,23 +71,23 @@
                   </asp:TemplateField>
                   <asp:TemplateField HeaderText="身份區分" SortExpression="f身份區分">
                       <EditItemTemplate>
-                          <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("f身份區分") %>'></asp:TextBox>
+                          <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("f身份區分") %>'></asp:TextBox>
                       </EditItemTemplate>
                       <ItemTemplate>
-                          <asp:Label ID="Label2" runat="server" Text='<%# Bind("f身份區分") %>'></asp:Label>
+                          <asp:Label ID="Label5" runat="server" Text='<%# Bind("f身份區分") %>'></asp:Label>
                       </ItemTemplate>
                       <ControlStyle Font-Size="Larger" />
                   </asp:TemplateField>
                   <asp:TemplateField HeaderText="家庭編號" SortExpression="f家庭編號">
                       <EditItemTemplate>
-                          <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("f家庭編號") %>'></asp:TextBox>
+                          <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("f家庭編號") %>'></asp:TextBox>
                       </EditItemTemplate>
                       <ItemTemplate>
-                          <asp:Label ID="Label1" runat="server" Text='<%# Bind("f家庭編號") %>'></asp:Label>
+                          <asp:Label ID="Label6" runat="server" Text='<%# Bind("f家庭編號") %>'></asp:Label>
                       </ItemTemplate>
                       <ControlStyle Font-Size="Larger" />
                   </asp:TemplateField>
-                  <asp:TemplateField ShowHeader="False">
+                  <asp:TemplateField HeaderText="功能" ShowHeader="False">
                       <EditItemTemplate>
                           <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="更新"></asp:LinkButton>
                           &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="取消"></asp:LinkButton>
@@ -98,19 +98,19 @@
                               onClientClick="return confirm('確定要刪除嗎?')"
                               runat="server" CausesValidation="False" CommandName="Delete" Text="刪除"></asp:LinkButton>
                       </ItemTemplate>
-                      <ControlStyle Font-Size="Large" />
+                      <ControlStyle Font-Size="Larger" />
                   </asp:TemplateField>
               </Columns>
-              <EditRowStyle BackColor="#2461BF" />
-              <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-              <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-              <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-              <RowStyle BackColor="#EFF3FB" />
-              <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-              <SortedAscendingCellStyle BackColor="#F5F7FB" />
-              <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-              <SortedDescendingCellStyle BackColor="#E9EBEF" />
-              <SortedDescendingHeaderStyle BackColor="#4870BE" />
+              <EditRowStyle BackColor="#999999" />
+              <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+              <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+              <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+              <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+              <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+              <SortedAscendingCellStyle BackColor="#E9E7E2" />
+              <SortedAscendingHeaderStyle BackColor="#506C8C" />
+              <SortedDescendingCellStyle BackColor="#FFFDF8" />
+              <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
           </asp:GridView>
           <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:letnobookDBConnectionString %>" DeleteCommand="DELETE FROM [tStudent] WHERE [f學生編號] = @original_f學生編號 AND (([f姓名] = @original_f姓名) OR ([f姓名] IS NULL AND @original_f姓名 IS NULL)) AND (([f生日] = @original_f生日) OR ([f生日] IS NULL AND @original_f生日 IS NULL)) AND (([f密碼] = @original_f密碼) OR ([f密碼] IS NULL AND @original_f密碼 IS NULL)) AND (([f性別] = @original_f性別) OR ([f性別] IS NULL AND @original_f性別 IS NULL)) AND (([fClassId] = @original_fClassId) OR ([fClassId] IS NULL AND @original_fClassId IS NULL)) AND (([f身份區分] = @original_f身份區分) OR ([f身份區分] IS NULL AND @original_f身份區分 IS NULL)) AND (([f家庭編號] = @original_f家庭編號) OR ([f家庭編號] IS NULL AND @original_f家庭編號 IS NULL))" InsertCommand="INSERT INTO [tStudent] ([f姓名], [f生日], [f密碼], [f性別], [fClassId], [f身份區分], [f家庭編號]) VALUES (@f姓名, @f生日, @f密碼, @f性別, @fClassId, @f身份區分, @f家庭編號)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [tStudent]" UpdateCommand="UPDATE [tStudent] SET [f姓名] = @f姓名, [f生日] = @f生日, [f密碼] = @f密碼, [f性別] = @f性別, [fClassId] = @fClassId, [f身份區分] = @f身份區分, [f家庭編號] = @f家庭編號 WHERE [f學生編號] = @original_f學生編號 AND (([f姓名] = @original_f姓名) OR ([f姓名] IS NULL AND @original_f姓名 IS NULL)) AND (([f生日] = @original_f生日) OR ([f生日] IS NULL AND @original_f生日 IS NULL)) AND (([f密碼] = @original_f密碼) OR ([f密碼] IS NULL AND @original_f密碼 IS NULL)) AND (([f性別] = @original_f性別) OR ([f性別] IS NULL AND @original_f性別 IS NULL)) AND (([fClassId] = @original_fClassId) OR ([fClassId] IS NULL AND @original_fClassId IS NULL)) AND (([f身份區分] = @original_f身份區分) OR ([f身份區分] IS NULL AND @original_f身份區分 IS NULL)) AND (([f家庭編號] = @original_f家庭編號) OR ([f家庭編號] IS NULL AND @original_f家庭編號 IS NULL))">
               <DeleteParameters>
@@ -150,6 +150,84 @@
                   <asp:Parameter Name="original_f家庭編號" Type="Int32" />
               </UpdateParameters>
           </asp:SqlDataSource>
+      </p>
+      <h2>管理者介面（家長）</h2>
+      <p>
+          <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="f家庭編號" DataSourceID="SqlDataSource2" AllowPaging="True" CellPadding="4" ForeColor="#333333" GridLines="None" class="table table-striped">
+              <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+              <Columns>
+                  <asp:TemplateField HeaderText="家庭編號" InsertVisible="False" SortExpression="f家庭編號">
+                      <EditItemTemplate>
+                          <asp:Label ID="Label1" runat="server" Text='<%# Eval("f家庭編號") %>'></asp:Label>
+                      </EditItemTemplate>
+                      <ItemTemplate>
+                          <asp:Label ID="Label1" runat="server" Text='<%# Bind("f家庭編號") %>'></asp:Label>
+                      </ItemTemplate>
+                      <ControlStyle Font-Size="Large" />
+                  </asp:TemplateField>
+                  <asp:TemplateField HeaderText="家長姓名" SortExpression="f家長姓名">
+                      <EditItemTemplate>
+                          <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("f家長姓名") %>'></asp:TextBox>
+                      </EditItemTemplate>
+                      <ItemTemplate>
+                          <asp:Label ID="Label5" runat="server" Text='<%# Bind("f家長姓名") %>'></asp:Label>
+                      </ItemTemplate>
+                      <ControlStyle Font-Size="Large" />
+                  </asp:TemplateField>
+                  <asp:TemplateField HeaderText="家長生日" SortExpression="f家長生日">
+                      <EditItemTemplate>
+                          <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("f家長生日") %>'></asp:TextBox>
+                      </EditItemTemplate>
+                      <ItemTemplate>
+                          <asp:Label ID="Label4" runat="server" Text='<%# Bind("f家長生日", "{0:D}") %>'></asp:Label>
+                      </ItemTemplate>
+                      <ControlStyle Font-Size="Larger" />
+                  </asp:TemplateField>
+                  <asp:TemplateField HeaderText="家長密碼" SortExpression="f家長密碼">
+                      <EditItemTemplate>
+                          <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("f家長密碼") %>'></asp:TextBox>
+                      </EditItemTemplate>
+                      <ItemTemplate>
+                          <asp:Label ID="Label3" runat="server" Text='<%# Bind("f家長密碼") %>'></asp:Label>
+                      </ItemTemplate>
+                      <ControlStyle Font-Size="Larger" />
+                  </asp:TemplateField>
+                  <asp:TemplateField HeaderText="身份區分" SortExpression="f身份區分">
+                      <EditItemTemplate>
+                          <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("f身份區分") %>'></asp:TextBox>
+                      </EditItemTemplate>
+                      <ItemTemplate>
+                          <asp:Label ID="Label2" runat="server" Text='<%# Bind("f身份區分") %>'></asp:Label>
+                      </ItemTemplate>
+                      <ControlStyle Font-Size="Larger" />
+                  </asp:TemplateField>
+                  <asp:TemplateField HeaderText="功能" ShowHeader="False">
+                      <EditItemTemplate>
+                          <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="更新"></asp:LinkButton>
+                          &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="取消"></asp:LinkButton>
+                      </EditItemTemplate>
+                      <ItemTemplate>
+                          <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="編輯"></asp:LinkButton>
+                          &nbsp;<asp:LinkButton ID="LinkButton2"
+                              onClientClick="return confirm('確定要刪除嗎?')"
+                              runat="server" CausesValidation="False" CommandName="Delete" Text="刪除"></asp:LinkButton>
+                      </ItemTemplate>
+                      <ControlStyle Font-Size="Larger" />
+                  </asp:TemplateField>
+              </Columns>
+              <EditRowStyle BackColor="#999999" />
+              <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+              <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+              <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+              <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+              <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+              <SortedAscendingCellStyle BackColor="#E9E7E2" />
+              <SortedAscendingHeaderStyle BackColor="#506C8C" />
+              <SortedDescendingCellStyle BackColor="#FFFDF8" />
+              <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+          </asp:GridView>
+      </p>
+      <p>
           <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:letnobookDBConnectionString %>" DeleteCommand="DELETE FROM [tParents] WHERE [f家庭編號] = @original_f家庭編號 AND (([f身份區分] = @original_f身份區分) OR ([f身份區分] IS NULL AND @original_f身份區分 IS NULL)) AND (([f家長密碼] = @original_f家長密碼) OR ([f家長密碼] IS NULL AND @original_f家長密碼 IS NULL)) AND (([f家長生日] = @original_f家長生日) OR ([f家長生日] IS NULL AND @original_f家長生日 IS NULL)) AND (([f家長姓名] = @original_f家長姓名) OR ([f家長姓名] IS NULL AND @original_f家長姓名 IS NULL))" InsertCommand="INSERT INTO [tParents] ([f身份區分], [f家長密碼], [f家長生日], [f家長姓名]) VALUES (@f身份區分, @f家長密碼, @f家長生日, @f家長姓名)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [tParents]" UpdateCommand="UPDATE [tParents] SET [f身份區分] = @f身份區分, [f家長密碼] = @f家長密碼, [f家長生日] = @f家長生日, [f家長姓名] = @f家長姓名 WHERE [f家庭編號] = @original_f家庭編號 AND (([f身份區分] = @original_f身份區分) OR ([f身份區分] IS NULL AND @original_f身份區分 IS NULL)) AND (([f家長密碼] = @original_f家長密碼) OR ([f家長密碼] IS NULL AND @original_f家長密碼 IS NULL)) AND (([f家長生日] = @original_f家長生日) OR ([f家長生日] IS NULL AND @original_f家長生日 IS NULL)) AND (([f家長姓名] = @original_f家長姓名) OR ([f家長姓名] IS NULL AND @original_f家長姓名 IS NULL))">
               <DeleteParameters>
                   <asp:Parameter Name="original_f家庭編號" Type="Int32" />
@@ -177,86 +255,10 @@
               </UpdateParameters>
           </asp:SqlDataSource>
       </p>
-      <h2>管理者介面（家長）</h2>
-      <p>
-          <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="f家庭編號" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" class="table table-striped">
-              <AlternatingRowStyle BackColor="White" />
-              <Columns>
-                  <asp:TemplateField HeaderText="家庭編號" InsertVisible="False" SortExpression="f家庭編號">
-                      <EditItemTemplate>
-                          <asp:Label ID="Label1" runat="server" Text='<%# Eval("f家庭編號") %>'></asp:Label>
-                      </EditItemTemplate>
-                      <ItemTemplate>
-                          <asp:Label ID="Label5" runat="server" Text='<%# Bind("f家庭編號") %>'></asp:Label>
-                      </ItemTemplate>
-                      <ControlStyle Font-Size="Larger" />
-                  </asp:TemplateField>
-                  <asp:TemplateField HeaderText="家長姓名" SortExpression="f家長姓名">
-                      <EditItemTemplate>
-                          <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("f家長姓名") %>'></asp:TextBox>
-                      </EditItemTemplate>
-                      <ItemTemplate>
-                          <asp:Label ID="Label4" runat="server" Text='<%# Bind("f家長姓名") %>'></asp:Label>
-                      </ItemTemplate>
-                      <ControlStyle Font-Size="Larger" />
-                  </asp:TemplateField>
-                  <asp:TemplateField HeaderText="家長生日" SortExpression="f家長生日">
-                      <EditItemTemplate>
-                          <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("f家長生日") %>'></asp:TextBox>
-                      </EditItemTemplate>
-                      <ItemTemplate>
-                          <asp:Label ID="Label3" runat="server" Text='<%# Bind("f家長生日") %>'></asp:Label>
-                      </ItemTemplate>
-                      <ControlStyle Font-Size="Larger" />
-                  </asp:TemplateField>
-                  <asp:TemplateField HeaderText="家長密碼" SortExpression="f家長密碼">
-                      <EditItemTemplate>
-                          <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("f家長密碼") %>'></asp:TextBox>
-                      </EditItemTemplate>
-                      <ItemTemplate>
-                          <asp:Label ID="Label2" runat="server" Text='<%# Bind("f家長密碼") %>'></asp:Label>
-                      </ItemTemplate>
-                      <ControlStyle Font-Size="Larger" />
-                  </asp:TemplateField>
-                  <asp:TemplateField HeaderText="身份區分" SortExpression="f身份區分">
-                      <EditItemTemplate>
-                          <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("f身份區分") %>'></asp:TextBox>
-                      </EditItemTemplate>
-                      <ItemTemplate>
-                          <asp:Label ID="Label1" runat="server" Text='<%# Bind("f身份區分") %>'></asp:Label>
-                      </ItemTemplate>
-                      <ControlStyle Font-Size="Larger" />
-                  </asp:TemplateField>
-                  <asp:TemplateField ShowHeader="False">
-                      <EditItemTemplate>
-                          <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="更新"></asp:LinkButton>
-                          &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="取消"></asp:LinkButton>
-                      </EditItemTemplate>
-                      <ItemTemplate>
-                          <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="編輯"></asp:LinkButton>
-                          &nbsp;<asp:LinkButton ID="LinkButton2"
-                              onClientClick="return confirm('確定要刪除嗎?')"
-                              runat="server" CausesValidation="False" CommandName="Delete" Text="刪除"></asp:LinkButton>
-                      </ItemTemplate>
-                      <ControlStyle Font-Size="Larger" />
-                  </asp:TemplateField>
-              </Columns>
-              <EditRowStyle BackColor="#2461BF" />
-              <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-              <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-              <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-              <RowStyle BackColor="#EFF3FB" />
-              <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-              <SortedAscendingCellStyle BackColor="#F5F7FB" />
-              <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-              <SortedDescendingCellStyle BackColor="#E9EBEF" />
-              <SortedDescendingHeaderStyle BackColor="#4870BE" />
-          </asp:GridView>
-      </p>
       <p>&nbsp;</p>
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <h2>管理者介面（學生及家長）
+      <h2>管理者介面（學生及家長）</h2>
 									<div class="alert alert-success" role="alert">
 										<div class="container">
 											<div class="row">
@@ -375,7 +377,8 @@
 														</div>						
 													   </div>
                                                     </div>
-  </div>
+    </div>
+  
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
       <h2>管理者介面（學生及家長）</h2>
       <div class="alert alert-info" role="alert">
@@ -432,6 +435,7 @@
 															</div>
 														</div>
   </div>
+    </div>
 </div>
 									
 													</div>
@@ -441,5 +445,5 @@
 								</div>
 						</div>
 					</div>
-       </div>
+       
 </asp:Content>
