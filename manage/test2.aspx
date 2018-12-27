@@ -66,8 +66,8 @@
 													  
 													  <div class="form-group">
 														  <asp:DropDownList class="form-control" runat="server" >
-															<asp:ListItem>男生</asp:ListItem>
-															<asp:ListItem>女生</asp:ListItem>
+															<asp:ListItem Value="true">男生</asp:ListItem>
+															<asp:ListItem Value="false">女生</asp:ListItem>
 														  </asp:DropDownList>
 													  </div>
 													  

@@ -661,6 +661,7 @@ if (window.jQuery) {
                 });
             }
         }
+        
         $(function () {
             if (typeof (Page_Validators) === "undefined") {
                 window.Page_Validators = [];
@@ -678,7 +679,10 @@ if (window.jQuery) {
             if (parse(document)) {
                 loadValidators();
             }
+            
             registerUpdatePanel();
+
         });
+
     } (jQuery));
 }

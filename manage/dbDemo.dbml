@@ -14,17 +14,17 @@
       <Column Name="f家庭編號" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="f身份區分" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="f家長密碼" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="f家長生日" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="f家長生日" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="f家長姓名" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tStudent" Member="tStudent">
     <Type Name="tStudent">
       <Column Name="f學生編號" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="f姓名" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="f生日" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="f密碼" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="f性別" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="f學生姓名" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="f學生生日" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="f學生密碼" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="f學生性別" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="fClassId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="f身份區分" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="f家庭編號" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -33,10 +33,10 @@
   <Table Name="dbo.tTeacher" Member="tTeacher">
     <Type Name="tTeacher">
       <Column Name="f老師編號" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="f姓名" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="f生日" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="f密碼" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="f性別" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="f老師姓名" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="f老師生日" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="f老師密碼" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="f老師性別" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="f身份區分" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>

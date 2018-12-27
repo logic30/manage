@@ -277,7 +277,7 @@ namespace manage
 		
 		private string _f家長密碼;
 		
-		private System.Nullable<System.DateTime> _f家長生日;
+		private string _f家長生日;
 		
 		private string _f家長姓名;
 		
@@ -291,7 +291,7 @@ namespace manage
     partial void Onf身份區分Changed();
     partial void Onf家長密碼Changing(string value);
     partial void Onf家長密碼Changed();
-    partial void Onf家長生日Changing(System.Nullable<System.DateTime> value);
+    partial void Onf家長生日Changing(string value);
     partial void Onf家長生日Changed();
     partial void Onf家長姓名Changing(string value);
     partial void Onf家長姓名Changed();
@@ -362,8 +362,8 @@ namespace manage
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f家長生日", DbType="Date")]
-		public System.Nullable<System.DateTime> f家長生日
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f家長生日", DbType="NVarChar(50)")]
+		public string f家長生日
 		{
 			get
 			{
@@ -431,13 +431,13 @@ namespace manage
 		
 		private int _f學生編號;
 		
-		private string _f姓名;
+		private string _f學生姓名;
 		
-		private System.Nullable<System.DateTime> _f生日;
+		private string _f學生生日;
 		
-		private string _f密碼;
+		private string _f學生密碼;
 		
-		private System.Nullable<bool> _f性別;
+		private string _f學生性別;
 		
 		private System.Nullable<int> _fClassId;
 		
@@ -451,14 +451,14 @@ namespace manage
     partial void OnCreated();
     partial void Onf學生編號Changing(int value);
     partial void Onf學生編號Changed();
-    partial void Onf姓名Changing(string value);
-    partial void Onf姓名Changed();
-    partial void Onf生日Changing(System.Nullable<System.DateTime> value);
-    partial void Onf生日Changed();
-    partial void Onf密碼Changing(string value);
-    partial void Onf密碼Changed();
-    partial void Onf性別Changing(System.Nullable<bool> value);
-    partial void Onf性別Changed();
+    partial void Onf學生姓名Changing(string value);
+    partial void Onf學生姓名Changed();
+    partial void Onf學生生日Changing(string value);
+    partial void Onf學生生日Changed();
+    partial void Onf學生密碼Changing(string value);
+    partial void Onf學生密碼Changed();
+    partial void Onf學生性別Changing(string value);
+    partial void Onf學生性別Changed();
     partial void OnfClassIdChanging(System.Nullable<int> value);
     partial void OnfClassIdChanged();
     partial void Onf身份區分Changing(string value);
@@ -492,82 +492,82 @@ namespace manage
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f姓名", DbType="NVarChar(50)")]
-		public string f姓名
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f學生姓名", DbType="NVarChar(50)")]
+		public string f學生姓名
 		{
 			get
 			{
-				return this._f姓名;
+				return this._f學生姓名;
 			}
 			set
 			{
-				if ((this._f姓名 != value))
+				if ((this._f學生姓名 != value))
 				{
-					this.Onf姓名Changing(value);
+					this.Onf學生姓名Changing(value);
 					this.SendPropertyChanging();
-					this._f姓名 = value;
-					this.SendPropertyChanged("f姓名");
-					this.Onf姓名Changed();
+					this._f學生姓名 = value;
+					this.SendPropertyChanged("f學生姓名");
+					this.Onf學生姓名Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f生日", DbType="Date")]
-		public System.Nullable<System.DateTime> f生日
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f學生生日", DbType="NVarChar(50)")]
+		public string f學生生日
 		{
 			get
 			{
-				return this._f生日;
+				return this._f學生生日;
 			}
 			set
 			{
-				if ((this._f生日 != value))
+				if ((this._f學生生日 != value))
 				{
-					this.Onf生日Changing(value);
+					this.Onf學生生日Changing(value);
 					this.SendPropertyChanging();
-					this._f生日 = value;
-					this.SendPropertyChanged("f生日");
-					this.Onf生日Changed();
+					this._f學生生日 = value;
+					this.SendPropertyChanged("f學生生日");
+					this.Onf學生生日Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f密碼", DbType="NVarChar(50)")]
-		public string f密碼
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f學生密碼", DbType="NVarChar(50)")]
+		public string f學生密碼
 		{
 			get
 			{
-				return this._f密碼;
+				return this._f學生密碼;
 			}
 			set
 			{
-				if ((this._f密碼 != value))
+				if ((this._f學生密碼 != value))
 				{
-					this.Onf密碼Changing(value);
+					this.Onf學生密碼Changing(value);
 					this.SendPropertyChanging();
-					this._f密碼 = value;
-					this.SendPropertyChanged("f密碼");
-					this.Onf密碼Changed();
+					this._f學生密碼 = value;
+					this.SendPropertyChanged("f學生密碼");
+					this.Onf學生密碼Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f性別", DbType="Bit")]
-		public System.Nullable<bool> f性別
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f學生性別", DbType="NVarChar(50)")]
+		public string f學生性別
 		{
 			get
 			{
-				return this._f性別;
+				return this._f學生性別;
 			}
 			set
 			{
-				if ((this._f性別 != value))
+				if ((this._f學生性別 != value))
 				{
-					this.Onf性別Changing(value);
+					this.Onf學生性別Changing(value);
 					this.SendPropertyChanging();
-					this._f性別 = value;
-					this.SendPropertyChanged("f性別");
-					this.Onf性別Changed();
+					this._f學生性別 = value;
+					this.SendPropertyChanged("f學生性別");
+					this.Onf學生性別Changed();
 				}
 			}
 		}
@@ -661,13 +661,13 @@ namespace manage
 		
 		private int _f老師編號;
 		
-		private string _f姓名;
+		private string _f老師姓名;
 		
-		private System.Nullable<System.DateTime> _f生日;
+		private string _f老師生日;
 		
-		private string _f密碼;
+		private string _f老師密碼;
 		
-		private System.Nullable<bool> _f性別;
+		private string _f老師性別;
 		
 		private string _f身份區分;
 		
@@ -677,14 +677,14 @@ namespace manage
     partial void OnCreated();
     partial void Onf老師編號Changing(int value);
     partial void Onf老師編號Changed();
-    partial void Onf姓名Changing(string value);
-    partial void Onf姓名Changed();
-    partial void Onf生日Changing(System.Nullable<System.DateTime> value);
-    partial void Onf生日Changed();
-    partial void Onf密碼Changing(string value);
-    partial void Onf密碼Changed();
-    partial void Onf性別Changing(System.Nullable<bool> value);
-    partial void Onf性別Changed();
+    partial void Onf老師姓名Changing(string value);
+    partial void Onf老師姓名Changed();
+    partial void Onf老師生日Changing(string value);
+    partial void Onf老師生日Changed();
+    partial void Onf老師密碼Changing(string value);
+    partial void Onf老師密碼Changed();
+    partial void Onf老師性別Changing(string value);
+    partial void Onf老師性別Changed();
     partial void Onf身份區分Changing(string value);
     partial void Onf身份區分Changed();
     #endregion
@@ -714,82 +714,82 @@ namespace manage
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f姓名", DbType="NVarChar(50)")]
-		public string f姓名
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f老師姓名", DbType="NVarChar(50)")]
+		public string f老師姓名
 		{
 			get
 			{
-				return this._f姓名;
+				return this._f老師姓名;
 			}
 			set
 			{
-				if ((this._f姓名 != value))
+				if ((this._f老師姓名 != value))
 				{
-					this.Onf姓名Changing(value);
+					this.Onf老師姓名Changing(value);
 					this.SendPropertyChanging();
-					this._f姓名 = value;
-					this.SendPropertyChanged("f姓名");
-					this.Onf姓名Changed();
+					this._f老師姓名 = value;
+					this.SendPropertyChanged("f老師姓名");
+					this.Onf老師姓名Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f生日", DbType="Date")]
-		public System.Nullable<System.DateTime> f生日
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f老師生日", DbType="NVarChar(50)")]
+		public string f老師生日
 		{
 			get
 			{
-				return this._f生日;
+				return this._f老師生日;
 			}
 			set
 			{
-				if ((this._f生日 != value))
+				if ((this._f老師生日 != value))
 				{
-					this.Onf生日Changing(value);
+					this.Onf老師生日Changing(value);
 					this.SendPropertyChanging();
-					this._f生日 = value;
-					this.SendPropertyChanged("f生日");
-					this.Onf生日Changed();
+					this._f老師生日 = value;
+					this.SendPropertyChanged("f老師生日");
+					this.Onf老師生日Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f密碼", DbType="NVarChar(50)")]
-		public string f密碼
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f老師密碼", DbType="NVarChar(50)")]
+		public string f老師密碼
 		{
 			get
 			{
-				return this._f密碼;
+				return this._f老師密碼;
 			}
 			set
 			{
-				if ((this._f密碼 != value))
+				if ((this._f老師密碼 != value))
 				{
-					this.Onf密碼Changing(value);
+					this.Onf老師密碼Changing(value);
 					this.SendPropertyChanging();
-					this._f密碼 = value;
-					this.SendPropertyChanged("f密碼");
-					this.Onf密碼Changed();
+					this._f老師密碼 = value;
+					this.SendPropertyChanged("f老師密碼");
+					this.Onf老師密碼Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f性別", DbType="Bit")]
-		public System.Nullable<bool> f性別
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f老師性別", DbType="NVarChar(50)")]
+		public string f老師性別
 		{
 			get
 			{
-				return this._f性別;
+				return this._f老師性別;
 			}
 			set
 			{
-				if ((this._f性別 != value))
+				if ((this._f老師性別 != value))
 				{
-					this.Onf性別Changing(value);
+					this.Onf老師性別Changing(value);
 					this.SendPropertyChanging();
-					this._f性別 = value;
-					this.SendPropertyChanged("f性別");
-					this.Onf性別Changed();
+					this._f老師性別 = value;
+					this.SendPropertyChanged("f老師性別");
+					this.Onf老師性別Changed();
 				}
 			}
 		}

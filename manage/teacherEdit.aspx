@@ -1,6 +1,7 @@
-﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="teacherEdit.aspx.cs" Inherits="manage.Contact" %>
+﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="teacherEdit.aspx.cs" Inherits="manage.Contact"  %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    
     <div class="jumbotron">
     <div id="page">
 				<div class="row">
@@ -24,57 +25,57 @@
       <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="f老師編號" DataSourceID="SqlDataSource1" class="table table-striped" CellPadding="4" ForeColor="#333333" GridLines="None">
           <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
           <Columns>
-              <asp:TemplateField HeaderText="老師編號" InsertVisible="False" SortExpression="f老師編號">
+              <asp:TemplateField HeaderText="編號" InsertVisible="False" SortExpression="f老師編號">
                   <EditItemTemplate>
                       <asp:Label ID="Label1" runat="server" Text='<%# Eval("f老師編號") %>'></asp:Label>
                   </EditItemTemplate>
                   <ItemTemplate>
-                      <asp:Label ID="Label5" runat="server" Text='<%# Bind("f老師編號") %>'></asp:Label>
+                      <asp:Label ID="Label1" runat="server" Text='<%# Bind("f老師編號") %>'></asp:Label>
                   </ItemTemplate>
                   <ControlStyle Font-Size="Large" />
               </asp:TemplateField>
-              <asp:TemplateField HeaderText="姓名" SortExpression="f姓名">
+              <asp:TemplateField HeaderText="姓名" SortExpression="f老師姓名">
                   <EditItemTemplate>
-                      <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("f姓名") %>'></asp:TextBox>
+                      <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("f老師姓名") %>'></asp:TextBox>
                   </EditItemTemplate>
                   <ItemTemplate>
-                      <asp:Label ID="Label4" runat="server" Text='<%# Bind("f姓名") %>'></asp:Label>
+                      <asp:Label ID="Label2" runat="server" Text='<%# Bind("f老師姓名") %>'></asp:Label>
                   </ItemTemplate>
                   <ControlStyle Font-Size="Large" />
               </asp:TemplateField>
-              <asp:TemplateField HeaderText="生日" SortExpression="f生日">
+              <asp:TemplateField HeaderText="生日" SortExpression="f老師生日">
                   <EditItemTemplate>
-                      <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("f生日") %>'></asp:TextBox>
+                      <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("f老師生日") %>'></asp:TextBox>
                   </EditItemTemplate>
                   <ItemTemplate>
-                      <asp:Label ID="Label3" runat="server" Text='<%# Bind("f生日", "{0:D}") %>'></asp:Label>
+                      <asp:Label ID="Label3" runat="server" Text='<%# Bind("f老師生日", "{0:D}") %>'></asp:Label>
                   </ItemTemplate>
                   <ControlStyle Font-Size="Larger" />
               </asp:TemplateField>
-              <asp:TemplateField HeaderText="密碼" SortExpression="f密碼">
+              <asp:TemplateField HeaderText="密碼" SortExpression="f老師密碼">
                   <EditItemTemplate>
-                      <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("f密碼") %>'></asp:TextBox>
+                      <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("f老師密碼") %>'></asp:TextBox>
                   </EditItemTemplate>
                   <ItemTemplate>
-                      <asp:Label ID="Label2" runat="server" Text='<%# Bind("f密碼") %>'></asp:Label>
+                      <asp:Label ID="Label4" runat="server" Text='<%# Bind("f老師密碼") %>'></asp:Label>
                   </ItemTemplate>
                   <ControlStyle Font-Size="Larger" />
               </asp:TemplateField>
-              <asp:TemplateField HeaderText="性別" SortExpression="f性別">
+              <asp:TemplateField HeaderText="性別" SortExpression="f老師性別">
                   <EditItemTemplate>
-                      <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Bind("f性別") %>' />
+                      <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Bind("f老師性別") %>' Text='<%# Eval("f老師性別").ToString()== "True" ? "男性":"女性" %>' />
                   </EditItemTemplate>
                   <ItemTemplate>
-                      <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Bind("f性別") %>' Enabled="false" />
+                      <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Bind("f老師性別") %>' Text='<%# Eval("f老師性別").ToString()== "True" ? "男性":"女性" %>' Enabled="False" />
                   </ItemTemplate>
                   <ControlStyle Font-Size="Larger" />
               </asp:TemplateField>
               <asp:TemplateField HeaderText="身份區分" SortExpression="f身份區分">
                   <EditItemTemplate>
-                      <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("f身份區分") %>'></asp:TextBox>
+                      <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("f身份區分") %>'></asp:TextBox>
                   </EditItemTemplate>
                   <ItemTemplate>
-                      <asp:Label ID="Label1" runat="server" Text='<%# Bind("f身份區分") %>'></asp:Label>
+                      <asp:Label ID="Label5" runat="server" Text='<%# Bind("f身份區分") %>'></asp:Label>
                   </ItemTemplate>
                   <ControlStyle Font-Size="Larger" />
               </asp:TemplateField>
@@ -103,37 +104,37 @@
           <SortedDescendingCellStyle BackColor="#FFFDF8" />
           <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
       </asp:GridView>
-      <br />
-      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:letnobookDBConnectionString %>" DeleteCommand="DELETE FROM [tTeacher] WHERE [f老師編號] = @original_f老師編號 AND (([f姓名] = @original_f姓名) OR ([f姓名] IS NULL AND @original_f姓名 IS NULL)) AND (([f生日] = @original_f生日) OR ([f生日] IS NULL AND @original_f生日 IS NULL)) AND (([f密碼] = @original_f密碼) OR ([f密碼] IS NULL AND @original_f密碼 IS NULL)) AND (([f性別] = @original_f性別) OR ([f性別] IS NULL AND @original_f性別 IS NULL)) AND (([f身份區分] = @original_f身份區分) OR ([f身份區分] IS NULL AND @original_f身份區分 IS NULL))" InsertCommand="INSERT INTO [tTeacher] ([f姓名], [f生日], [f密碼], [f性別], [f身份區分]) VALUES (@f姓名, @f生日, @f密碼, @f性別, @f身份區分)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [tTeacher]" UpdateCommand="UPDATE [tTeacher] SET [f姓名] = @f姓名, [f生日] = @f生日, [f密碼] = @f密碼, [f性別] = @f性別, [f身份區分] = @f身份區分 WHERE [f老師編號] = @original_f老師編號 AND (([f姓名] = @original_f姓名) OR ([f姓名] IS NULL AND @original_f姓名 IS NULL)) AND (([f生日] = @original_f生日) OR ([f生日] IS NULL AND @original_f生日 IS NULL)) AND (([f密碼] = @original_f密碼) OR ([f密碼] IS NULL AND @original_f密碼 IS NULL)) AND (([f性別] = @original_f性別) OR ([f性別] IS NULL AND @original_f性別 IS NULL)) AND (([f身份區分] = @original_f身份區分) OR ([f身份區分] IS NULL AND @original_f身份區分 IS NULL))">
+      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:manage.Properties.Settings.letnobookDBConnectionString %>" DeleteCommand="DELETE FROM [tTeacher] WHERE [f老師編號] = @original_f老師編號 AND (([f老師姓名] = @original_f老師姓名) OR ([f老師姓名] IS NULL AND @original_f老師姓名 IS NULL)) AND (([f老師生日] = @original_f老師生日) OR ([f老師生日] IS NULL AND @original_f老師生日 IS NULL)) AND (([f老師密碼] = @original_f老師密碼) OR ([f老師密碼] IS NULL AND @original_f老師密碼 IS NULL)) AND (([f老師性別] = @original_f老師性別) OR ([f老師性別] IS NULL AND @original_f老師性別 IS NULL)) AND (([f身份區分] = @original_f身份區分) OR ([f身份區分] IS NULL AND @original_f身份區分 IS NULL))" InsertCommand="INSERT INTO [tTeacher] ([f老師姓名], [f老師生日], [f老師密碼], [f老師性別], [f身份區分]) VALUES (@f老師姓名, @f老師生日, @f老師密碼, @f老師性別, @f身份區分)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [tTeacher]" UpdateCommand="UPDATE [tTeacher] SET [f老師姓名] = @f老師姓名, [f老師生日] = @f老師生日, [f老師密碼] = @f老師密碼, [f老師性別] = @f老師性別, [f身份區分] = @f身份區分 WHERE [f老師編號] = @original_f老師編號 AND (([f老師姓名] = @original_f老師姓名) OR ([f老師姓名] IS NULL AND @original_f老師姓名 IS NULL)) AND (([f老師生日] = @original_f老師生日) OR ([f老師生日] IS NULL AND @original_f老師生日 IS NULL)) AND (([f老師密碼] = @original_f老師密碼) OR ([f老師密碼] IS NULL AND @original_f老師密碼 IS NULL)) AND (([f老師性別] = @original_f老師性別) OR ([f老師性別] IS NULL AND @original_f老師性別 IS NULL)) AND (([f身份區分] = @original_f身份區分) OR ([f身份區分] IS NULL AND @original_f身份區分 IS NULL))">
           <DeleteParameters>
               <asp:Parameter Name="original_f老師編號" Type="Int32" />
-              <asp:Parameter Name="original_f姓名" Type="String" />
-              <asp:Parameter DbType="Date" Name="original_f生日" />
-              <asp:Parameter Name="original_f密碼" Type="String" />
-              <asp:Parameter Name="original_f性別" Type="Boolean" />
+              <asp:Parameter Name="original_f老師姓名" Type="String" />
+              <asp:Parameter DbType="Date" Name="original_f老師生日" />
+              <asp:Parameter Name="original_f老師密碼" Type="String" />
+              <asp:Parameter Name="original_f老師性別" Type="Boolean" />
               <asp:Parameter Name="original_f身份區分" Type="String" />
           </DeleteParameters>
           <InsertParameters>
-              <asp:Parameter Name="f姓名" Type="String" />
-              <asp:Parameter DbType="Date" Name="f生日" />
-              <asp:Parameter Name="f密碼" Type="String" />
-              <asp:Parameter Name="f性別" Type="Boolean" />
+              <asp:Parameter Name="f老師姓名" Type="String" />
+              <asp:Parameter DbType="Date" Name="f老師生日" />
+              <asp:Parameter Name="f老師密碼" Type="String" />
+              <asp:Parameter Name="f老師性別" Type="Boolean" />
               <asp:Parameter Name="f身份區分" Type="String" />
           </InsertParameters>
           <UpdateParameters>
-              <asp:Parameter Name="f姓名" Type="String" />
-              <asp:Parameter DbType="Date" Name="f生日" />
-              <asp:Parameter Name="f密碼" Type="String" />
-              <asp:Parameter Name="f性別" Type="Boolean" />
+              <asp:Parameter Name="f老師姓名" Type="String" />
+              <asp:Parameter DbType="Date" Name="f老師生日" />
+              <asp:Parameter Name="f老師密碼" Type="String" />
+              <asp:Parameter Name="f老師性別" Type="Boolean" />
               <asp:Parameter Name="f身份區分" Type="String" />
               <asp:Parameter Name="original_f老師編號" Type="Int32" />
-              <asp:Parameter Name="original_f姓名" Type="String" />
-              <asp:Parameter DbType="Date" Name="original_f生日" />
-              <asp:Parameter Name="original_f密碼" Type="String" />
-              <asp:Parameter Name="original_f性別" Type="Boolean" />
+              <asp:Parameter Name="original_f老師姓名" Type="String" />
+              <asp:Parameter DbType="Date" Name="original_f老師生日" />
+              <asp:Parameter Name="original_f老師密碼" Type="String" />
+              <asp:Parameter Name="original_f老師性別" Type="Boolean" />
               <asp:Parameter Name="original_f身份區分" Type="String" />
           </UpdateParameters>
       </asp:SqlDataSource>
+      <br />
       
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -149,18 +150,19 @@
 														<asp:Textbox runat="server" type="text" class="form-control" placeholder="請輸入姓名" aria-label="degree" id="txtName" ></asp:TextBox>
 													  </div>
 												</div>
-												<div class="col-4">
-													<div class="input-group mb-3">
+												
+													<div class="input-group mb-3" >
 														<div class="input-group-prepend">
 														  <br /><span class="input-group-text" >教師生日</span>
 														</div>
-														<asp:Textbox runat="server" type="text" class="form-control" placeholder="請輸入生日" aria-label="degree" id="txtBirthday" ></asp:TextBox>
+														<asp:TextBox runat="server" type="date" class="form-control" placeholder="請輸入生日"  id="datepicker"></asp:TextBox>
+                                                        
 													  </div>
 												</div>
 												
 																						
 												
-											</div>
+											
 
 											<div class="row">
 												<div class="col-4">
@@ -179,9 +181,9 @@
 													  
 													  
 													  <div class="form-group">
-														  <asp:DropDownList class="form-control" runat="server" >
-															<asp:ListItem>男生</asp:ListItem>
-															<asp:ListItem>女生</asp:ListItem>
+														  <asp:DropDownList class="form-control" runat="server" id="ddlGender">
+															<asp:ListItem Value="true">男生</asp:ListItem>
+															<asp:ListItem Value="false">女生</asp:ListItem>
 														  </asp:DropDownList>
 													  </div>
 													  
@@ -198,10 +200,10 @@
 													  
 													  <div class="form-group">
 														  <asp:DropDownList class="form-control" id="exampleFormControlSelect1" runat="server">
-															<asp:ListItem>管理員</asp:ListItem>
-															<asp:ListItem>教師</asp:ListItem>
-															<asp:ListItem>家長</asp:ListItem>
-															<asp:ListItem>學生</asp:ListItem>
+															<asp:ListItem >管理員</asp:ListItem>
+															<asp:ListItem selected="True">教師</asp:ListItem>
+															<asp:ListItem >家長</asp:ListItem>
+															<asp:ListItem >學生</asp:ListItem>
 														  </asp:DropDownList>
 													  </div>
 													  
@@ -212,14 +214,14 @@
 												
 											</div>	
 													<div class="row1">
-													<asp:button type="button" class="btn btn-primary" id="btnAdd" runat="server" Text="新增"  />
-											        <asp:button type="button" class="btn btn-primary" id="btnFix" runat="server" Text="修改" />
-												    <asp:button type="button" class="btn btn-primary" id="btnDel" runat="server" Text="刪除" />
+													<asp:button type="button" class="btn btn-primary" id="btnAdd" runat="server" Text="新增" OnClick="btnAdd_Click"  />
+											        
                                                     <asp:Label ID="lblMsg" runat="server" Text="Label"></asp:Label>
-													</div>						
+													</div>
+                                            </div>
 												   </div>
 												</div>
-  </div>
+  
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
       <h2>管理者介面（教師）</h2>
       <div class="alert alert-info" role="alert">
@@ -278,6 +280,7 @@
 														</div>
   </div>
 </div>
+                            </div>
 							
 									
 												
@@ -288,5 +291,5 @@
 												
                     </div>
 								</div>
-					</div>	
+						
 </asp:Content>

@@ -61,10 +61,10 @@
               </asp:TemplateField>
               <asp:TemplateField HeaderText="導師姓名" SortExpression="f導師姓名">
                   <EditItemTemplate>
-                      <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("f導師姓名") %>'></asp:TextBox>
+                      <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("f老師姓名") %>'></asp:TextBox>
                   </EditItemTemplate>
                   <ItemTemplate>
-                      <asp:Label ID="Label1" runat="server" Text='<%# Bind("f導師姓名") %>'></asp:Label>
+                      <asp:Label ID="Label1" runat="server" Text='<%# Bind("f老師姓名") %>'></asp:Label>
                   </ItemTemplate>
                   <ControlStyle Font-Size="Larger" />
               </asp:TemplateField>
@@ -165,8 +165,7 @@
 										<div class="row">
                                             <br />
 												<asp:button type="button" class="btn btn-primary" id="btnAdd" runat="server" Text="新增" OnClick="btnAdd_Click" />
-											    <asp:button type="button" class="btn btn-primary" id="btnFix" runat="server" Text="修改" />
-												<asp:button type="button" class="btn btn-primary" id="btnDel" runat="server" Text="刪除" />
+											    
                                                 <asp:Label ID="lblMsg" runat="server" Text="Label"></asp:Label>
 										</div>
 									</div>
